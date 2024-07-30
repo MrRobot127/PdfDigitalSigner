@@ -1,0 +1,173 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Default Font Family -->
+    <FontFamily x:Key="CustomFontFamily">/Fonts/#Poppins</FontFamily>
+
+    <!-- Default Border Style -->
+    <Style TargetType="Border" x:Key="BorderStyle">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="White"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="Padding" Value="5"/>
+    </Style>
+
+    <!-- Default TextBlock Style -->
+    <Style TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource CustomFontFamily}"/>
+    </Style>
+
+    <!-- Button Style -->
+    <Style TargetType="{x:Type Button}" x:Key="ButtonStyle">
+        <Setter Property="FontFamily" Value="{StaticResource CustomFontFamily}"/>
+        <Setter Property="Background" Value="#007ACC"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#005F91"/>
+        <Setter Property="Padding" Value="10 5"/>
+        <Setter Property="Margin" Value="0 0 10 0"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{TemplateBinding Background}" 
+                             BorderBrush="{TemplateBinding BorderBrush}" 
+                             BorderThickness="{TemplateBinding BorderThickness}"
+                             CornerRadius="5">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#009FE3"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- PasswordBox Style -->
+    <Style TargetType="{x:Type PasswordBox}" x:Key="PasswordBoxStyle">
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="Gray"/>
+        <Setter Property="Padding" Value="5,0,0,0"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Height" Value="25"/>
+    </Style>
+
+    <!-- Style for customizing the appearance of the thumbs within a scrollbar -->
+    <Style x:Key="ScrollThumbs" TargetType="{x:Type Thumb}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <!-- ControlTemplate defining the visual structure of the Thumb -->
+                <ControlTemplate>
+                    <!-- Grid containing the visual elements of the Thumb -->
+                    <Grid x:Name="Grid">
+                        <!-- Transparent rectangle providing space for the Thumb -->
+                        <Rectangle HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch"
+                        Width="Auto" 
+                        Height="Auto" 
+                        Fill="Transparent"/>
+                        <!-- Main visual element representing the Thumb, with rounded corners -->
+                        <Border x:Name="Rectangle1" 
+                                 CornerRadius="8" 
+                                 HorizontalAlignment="Stretch" 
+                                 VerticalAlignment="Stretch" 
+                                 Width="Auto" Height="Auto" 
+                                 Background="{TemplateBinding Background}"/>
+                    </Grid>
+                    <!-- Triggers to modify the appearance of the Thumb based on certain conditions -->
+                    <ControlTemplate.Triggers>
+                        <!-- Changes the size of the Thumb if it's tagged as Horizontal -->
+                        <Trigger Property="Tag" Value="Horizontal">
+                            <Setter TargetName="Rectangle1" Property="Width" Value="Auto"/>
+                            <Setter TargetName="Rectangle1" Property="Height" Value="11"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Style for customizing the appearance and behavior of the scrollbar -->
+    <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
+        <!-- Disables flicks, which are rapid swiping gestures -->
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        <!-- Sets the color of the scrollbar's foreground elements -->
+        <Setter Property="Foreground" Value="#007ACC"/>
+        <!-- Sets the background color of the scrollbar -->
+        <Setter Property="Background" Value="DarkGray"/>
+        <!-- Sets the width of the scrollbar -->
+        <Setter Property="Width" Value="10"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <!-- ControlTemplate defining the visual structure and behavior of the scrollbar -->
+                <ControlTemplate TargetType="{x:Type ScrollBar}">
+                    <!-- Grid serving as the root element of the scrollbar template -->
+                    <Grid x:Name="GridRoot" Width="12" Background="{x:Null}">
+                        <!-- Track representing the area along which the thumb can move -->
+                        <Track x:Name="PART_Track" Grid.Row="0" IsDirectionReversed="true" Focusable="False">
+                            <!-- Thumb representing the current position within the track -->
+                            <Track.Thumb>
+                                <Thumb x:Name="Thumb" Background="{TemplateBinding Foreground}" 
+                                        Style="{DynamicResource ScrollThumbs}"/>
+                            </Track.Thumb>
+                            <!-- Button to scroll up or right when pressed -->
+                            <Track.IncreaseRepeatButton>
+                                <RepeatButton x:Name="PageUp" Command="ScrollBar.PageDownCommand" Opacity="0" Focusable="False"/>
+                            </Track.IncreaseRepeatButton>
+                            <!-- Button to scroll down or left when pressed -->
+                            <Track.DecreaseRepeatButton>
+                                <RepeatButton x:Name="PageDown" Command="ScrollBar.PageUpCommand" Opacity="0" Focusable="False"/>
+                            </Track.DecreaseRepeatButton>
+                        </Track>
+                    </Grid>
+
+                    <!-- Triggers to modify the appearance of elements based on certain conditions -->
+                    <ControlTemplate.Triggers>
+                        <!-- Changes the background of the thumb when the mouse is over it -->
+                        <Trigger SourceName="Thumb" Property="IsMouseOver" Value="true">
+                            <Setter Value="{DynamicResource ButtonSelectBrush}" 
+                                    TargetName="Thumb" Property="Background"/>
+                        </Trigger>
+                        <!-- Changes the background of the thumb when it's being dragged -->
+                        <Trigger SourceName="Thumb" Property="IsDragging" Value="true">
+                            <Setter Value="{DynamicResource DarkBrush}" TargetName="Thumb" Property="Background"/>
+                        </Trigger>
+                        <!-- Hides the thumb if the scrollbar is disabled -->
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter TargetName="Thumb" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <!-- Adjusts the layout and behavior of the scrollbar if it's horizontal -->
+                        <Trigger Property="Orientation" Value="Horizontal">
+                            <Setter TargetName="GridRoot" Property="LayoutTransform">
+                                <Setter.Value>
+                                    <RotateTransform Angle="-90"/>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter TargetName="PART_Track" Property="LayoutTransform">
+                                <Setter.Value>
+                                    <RotateTransform Angle="-90"/>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Width" Value="Auto"/>
+                            <Setter Property="Height" Value="12"/>
+                            <Setter TargetName="Thumb" Property="Tag" Value="Horizontal"/>
+                            <Setter TargetName="PageDown" Property="Command" Value="ScrollBar.PageLeftCommand"/>
+                            <Setter TargetName="PageUp" Property="Command" Value="ScrollBar.PageRightCommand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+ 
+
+</ResourceDictionary>

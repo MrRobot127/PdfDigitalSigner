@@ -1,0 +1,263 @@
+﻿
+<body style="padding:0px 15px;position:relative;font-family:Arial;">
+    <img style="width:100%;" src='data:image/jpeg;base64,{{headerBase64String}}' />
+
+    <div style="height:100vh">
+        <p style="text-align: center; text-decoration: underline; font-size: 12.5px; line-height: 20px;">PRIVATE AND STRICTLY CONFIDENTIAL</p>
+
+        <p style="font-size: 11px; line-height: 20px;">{{Letter_Issue_Date}}</p>
+        <p style="font-size: 12px; font-weight: bold; line-height: 20px;">
+            {{First_Name}}<br />
+            {{DESIGNATION}}<br />
+            Employee Code: {{ECN}}<br />
+            Email:{{Email_ID}}<br />
+        </p>
+        <p style="font-size: 12px; text-align: center; line-height: 20px;">INCREMENT LETTER</p>
+        <p style="font-size: 12px; text-align: justify; line-height: 20px;">
+            Dear <b>{{First_Name}}</b>,
+            <br /><br />
+            Appreciating your hard work and performance towards the roles and responsibilities assigned to you,
+            we are pleased to inform you that your salary has been revised and your annual CTC would be
+            <a style="font-weight:bold">{{Amount_Desc}} <i>[{{Total}}/=]</i> per annum</a> with effect from {{Structure_Effective_Date}}. (New Structure attached in Annexure 1).
+            <br /><br />
+
+            All other terms and conditions of your appointment shall remain unchanged. The Management hopes you will continue to deliver high performance and shoulder new responsibilities in the future.
+            <br /><br />
+
+            Kindly sign the duplicate copy of this communication and return it to us for our records.
+            <br /><br />
+
+            Yours truly,
+        </p>
+
+        <p style="font-size: 12px; font-weight: bold; line-height: 20px;">
+            For EUI Limited<br />(India Branch Office)
+        </p><br /><br />
+        <p style="font-size: 12px; font-weight: bold; line-height: 20px;">
+            Tanu Kumar<br />HR Head
+        </p>
+        <p style="font-size: 12px; font-weight: bold; line-height: 20px;">
+            I accept the terms and conditions as described in this letter.
+        </p><br /><br />
+
+        <p style="font-size: 12px; font-weight: bold; line-height: 20px;">
+            ___________________<br />
+            Name: {{First_Name}}<br />
+            Date: {{Letter_Issue_Date}}
+        </p>
+
+        <div style="font-size: 11px;position:absolute;bottom:0px;left:0px;">
+            <div align="center">
+                <span style="font-size: 14px;font-weight:bold;">EUI LIMITED</span><br />
+                <span style="font-size: 11px;">(Incorporated under the UK Laws as a limited liability company)</span>
+            </div><br />
+            <span>
+                <span>
+                    <strong>Registered office :</strong>
+                    Ty Admiral, David Street, Cardiff, CF 10 2EH (U.K.). website: www.admiralgroup.co.uk
+                </span>
+            </span><br />
+            <span><span><strong>India Branch Office (Unit 3):</strong> 9th Floor, Building No. 1A of Phase I, ITPG Developers Pvt Limited, Electronic Hardware & IT/ITES</span></span><br />
+            <span><span>SEZ,  Village Behrampur, Near Sector 59, Gurugram – (Haryana) Post Office – CRPF Kadarpur, Pin Code – 122098 RoC FRN: F04348</span></span><br />
+        </div>
+    </div>
+
+    <!-- Second Page Start -->
+
+    <div style="page-break-before: always;">
+        <img style="width:100%;" src='data:image/jpeg;base64,{{headerBase64String}}' />
+
+        <br /><br />
+        <p style="text-align: center; font-size: 12.5px; font-weight: bold; line-height: 20px;">
+            ANNEXURE 1 TO THE LETTER DATED {{Structure_Effective_Date}} BETWEEN EUI LIMITED (INDIA BRANCH<br />OFFICE) AND <span style="text-transform:uppercase;"> {{First_Name}}</span> - {{ECN}}
+        </p>
+        <p style="text-align: left; font-size: 12.5px; line-height: 20px;">
+            The Cost to Company (CTC) will be construed to include the following items and the amounts mentioned against the same-
+        </p>
+        <table border="1" style="border-collapse: collapse;width: 100%;text-align: left; font-size: 13px;">
+            <tr>
+                <th colspan="2" style="background-color: #C0C0C0; padding: 5px 8px;">
+                    Breakup of Salary – {{First_Name}}
+                </th>
+                <th colspan="2" style="border-top: 1px solid #fff; border-right: 1px solid #fff"> </th>
+            </tr>
+            <tr>
+                <th style="width: 10%; background-color: #C0C0C0; padding: 5px 8px;">S. No.</th>
+                <th style="width:40%; background-color: #C0C0C0; padding: 5px 8px;">Components</th>
+                <th style="width:25%; background-color: #C0C0C0; padding: 5px 8px;">Monthly</th>
+                <th style="width:25%; background-color: #C0C0C0; padding: 5px 8px;">Yearly</th>
+            </tr>
+            <tr>
+                <td style="background-color: #D9D9D9; padding: 5px 8px; text-align: right;font-weight:bold;">(A)</td>
+                <td colspan="3" style="background-color: #D9D9D9; padding: 5px 8px; font-weight: bold;">Fixed</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 8px; text-align: right;">1.</td>
+                <td style="padding: 5px 8px;">Basic Salary</td>
+                <td style="padding: 5px 8px;text-align:right;">{{Basic_m}}</td>
+                <td style="padding: 5px 8px; text-align: right;">{{Basic_y}}</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 8px; text-align: right;">2.</td>
+                <td style="padding: 5px 8px;line-height:20px;">
+                    Employer Contribution of Provident Fund (PF)
+                </td>
+                <td style="padding: 5px 8px;text-align:right;">{{PF_m}}</td>
+                <td style="padding: 5px 8px;text-align:right;">{{PF_y}}</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 8px; text-align: right;">3</td>
+                <td style="padding: 5px 8px;">Statutory Bonus</td>
+                <td style="padding: 5px 8px;text-align:right;">{{Statutory Bonus_m}}</td>
+                <td style="padding: 5px 8px;text-align:right;">{{Statutory Bonus_y}}</td>
+            </tr>
+            <tr>
+                <td style="background-color: #D9D9D9; padding: 5px 8px; text-align: right; font-weight: bold; ">(B)</td>
+                <td colspan="3" style="background-color: #D9D9D9; padding: 5px 8px; font-weight: bold;">Flexible Benefits Options</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 8px; text-align: right;">4.</td>
+                <td style="padding: 5px 8px;">House Rent Allowance (HRA)</td>
+                <td style="padding: 5px 8px;text-align:right;">{{HRA_m}}</td>
+                <td style="padding: 5px 8px;text-align:right;">{{HRA_y}}</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 8px; text-align: right;">5.</td>
+                <td style="padding: 5px 8px;">Telephone Reimbursement</td>
+                <td style="padding: 5px 8px;text-align:right;">{{Telephone_m}}</td>
+                <td style="padding: 5px 8px;text-align:right;">{{Telephone_y}}</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 8px; text-align: right;">6.</td>
+                <td style="padding: 5px 8px;">Mobile Handset Reimbursement</td>
+                <td style="padding: 5px 8px; text-align: right;">Paid Annually</td>
+                <td style="padding: 5px 8px; text-align: right;">{{Mobile_Handset_y}}</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 8px; text-align: right;">7.</td>
+                <td style="padding: 5px 8px;">Leave Travel Assistance (LTA)</td>
+                <td style="padding: 5px 8px;text-align:right;">{{LTA_m}}</td>
+                <td style="padding: 5px 8px;text-align:right;">{{LTA_y}}</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 8px; text-align: right;">8.</td>
+                <td style="padding: 5px 8px;">Children’s Education Allowance</td>
+                <td style="padding: 5px 8px;text-align:right;">{{Child_Education_m}}</td>
+                <td style="padding: 5px 8px;text-align:right;">{{Child_Education_y}}</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 8px; text-align: right;">9.</td>
+                <td style="padding: 5px 8px;">Professional Development Scheme</td>
+                <td style="padding: 5px 8px;text-align:right;">Paid Annually</td>
+                <td style="padding: 5px 8px;text-align:right;">{{Professional_Development_y}}</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 8px; text-align: right;">10.</td>
+                <td style="padding: 5px 8px;">
+                    Vehicle Fuel & Maintenance<br />
+                    Allowance
+                </td>
+                <td style="padding: 5px 8px;text-align:right;">{{CarBike_m}}</td>
+                <td style="padding: 5px 8px;text-align:right;">{{CarBike_y}}</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 8px; text-align: right;">11.</td>
+                <td style="padding: 5px 8px;">Meal Vouchers/Coupons</td>
+                <td style="padding: 5px 8px;text-align:right;">{{Meal_m}}</td>
+                <td style="padding: 5px 8px;text-align:right;">{{Meal_y}}</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 8px; text-align: right;">12.</td>
+                <td style="padding: 5px 8px;">Gift Voucher</td>
+                <td style="padding: 5px 8px;text-align:right;">Paid Annually</td>
+                <td style="padding: 5px 8px;text-align:right;">{{Gift_y}}</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 8px; text-align: right;">13.</td>
+                <td style="padding: 5px 8px;">Special Allowance</td>
+                <td style="padding: 5px 8px;text-align:right;">{{Special_m}}</td>
+                <td style="padding: 5px 8px;text-align:right;">{{Special_y}}</td>
+            </tr>
+            <tr>
+                <td style="background-color: #D9D9D9; padding: 5px 8px; text-align: right; font-weight: bold; ">(C)</td>
+                <th style="background-color: #D9D9D9; padding: 5px 8px; text-align: left; font-weight: bold;">Total Fixed Compensation</th>
+                <th style="background-color: #D9D9D9; padding: 5px 8px;text-align:right;">{{Monthly}}</th>
+                <th style="background-color: #D9D9D9; padding: 5px 8px;text-align:right;">{{Subtotal}}</th>
+            </tr>
+            <tr>
+                <td style="padding: 5px 8px; text-align: right;">14.</td>
+                <td style="padding: 5px 8px;line-height:20px;">Performance Bonus (To be paid every 6 months) The payment will depend on the evaluation of your performance by the management and will not exceed the amount mentioned</td>
+                <td style="padding: 5px 8px;border-right: hidden;"></td>
+                <td style="padding: 5px 8px; text-align: right;">{{Bonus}}</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 8px; text-align: right;">15.</td>
+                <td style="padding: 5px 8px;line-height:20px;">Gratuity-Payable at the time of leaving the company</td>
+                <td style="padding: 5px 8px;border-right: hidden;"></td>
+                <td style="padding: 5px 8px; text-align: right;">{{Gratuity}}</td>
+            </tr>
+            <tr>
+                <td style="background-color: #D9D9D9; padding: 5px 8px; text-align: right; font-weight: bold; ">(D)</td>
+                <th style="background-color: #D9D9D9; padding: 5px 8px; text-align: left; font-weight: bold; ">Total Cost to the Company</th>
+                <th style="background-color: #D9D9D9; padding: 5px 8px;"></th>
+                <th style="background-color: #D9D9D9; padding: 5px 8px; text-align: right;">{{Total}}</th>
+            </tr>
+        </table>
+
+        <div style="font-size: 11px;position:absolute;bottom:0px;left:0px;">
+            <div align="center">
+                <span style="font-size: 14px;font-weight:bold;">EUI LIMITED</span><br />
+                <span style="font-size: 11px;">(Incorporated under the UK Laws as a limited liability company)</span>
+            </div><br />
+            <span><span><strong>Registered office :</strong> Ty Admiral, David Street, Cardiff, CF 10 2EH (U.K.). website: www.admiralgroup.co.uk</span></span><br />
+            <span><span><strong>India Branch Office (Unit 3):</strong> 9th Floor, Building No. 1A of Phase I, ITPG Developers Pvt Limited, Electronic Hardware & IT/ITES</span></span><br />
+            <span><span>SEZ,  Village Behrampur, Near Sector 59, Gurugram – (Haryana) Post Office – CRPF Kadarpur, Pin Code – 122098 RoC FRN: F04348</span></span><br />
+        </div>
+    </div>
+
+
+    <div style="page-break-before: always;">
+        <img style="width:100%;" src='data:image/jpeg;base64,{{headerBase64String}}' />
+
+        <br /><br />
+        <table border="1" style="border-collapse: collapse;width: 100%;text-align: left; font-size: 12.5px;">
+            <tr>
+                <td style="width: 50px; background-color: #D9D9D9; padding: 5px 8px; text-align: right; font-weight: bold; ">(E)</td>
+                <td colspan="3" style="background-color: #D9D9D9; padding: 5px 8px; font-weight: bold; font-weight: bold;">Discretionary Free Share Scheme</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="padding: 5px 8px; text-align: justify; line-height: 20px;">You may be eligible to receive shares of the Company subject to satisfaction of conditions as mentioned in the scheme document. Please refer the Employee Manual and Share Scheme document for detailed understanding.</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <p style="font-size: 12px; text-align: left; line-height: 20px;">In case of items 4 to 13 to the extent incurred by you for the purposes of the business of the company, will be exempted and the balance will be subject to tax in accordance with the Income Tax Act and Rules thereunder.</p>
+        <p style="font-size: 12px; font-weight: bold; line-height: 20px;">
+            For EUI Limited<br />(India Branch Office)
+        </p><br /><br />
+        <p style="font-size: 12px; font-weight: bold; line-height: 20px;">
+            Tanu Kumar<br />HR Head
+        </p>
+        <p style="font-size: 12px;font-weight: bold;">
+            I accept the terms and conditions as described in this letter.
+        </p><br /><br />
+        <p style="font-size: 12px; font-weight: bold; line-height: 20px;">
+            ___________________<br />
+            Name: {{First_Name}}<br />
+            Date: {{Letter_Issue_Date}}
+        </p>
+
+        <div style="font-size: 11px;position:absolute;bottom:0px;left:0px;">
+            <div align="center">
+                <span style="font-size: 14px;font-weight:bold;">EUI LIMITED</span><br />
+                <span style="font-size: 11px;">(Incorporated under the UK Laws as a limited liability company)</span>
+            </div><br />
+            <span><span><strong>Registered office :</strong> Ty Admiral, David Street, Cardiff, CF 10 2EH (U.K.). website: www.admiralgroup.co.uk</span></span><br />
+            <span><span><strong>India Branch Office (Unit 3):</strong> 9th Floor, Building No. 1A of Phase I, ITPG Developers Pvt Limited, Electronic Hardware & IT/ITES</span></span><br />
+            <span><span>SEZ,  Village Behrampur, Near Sector 59, Gurugram – (Haryana) Post Office – CRPF Kadarpur, Pin Code – 122098 RoC FRN: F04348</span></span><br />
+        </div>
+    </div>
+
+
+
+</body>
